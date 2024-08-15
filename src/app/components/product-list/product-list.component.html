@@ -1,0 +1,19 @@
+<div class="header">
+    Fake Osklen
+</div>
+
+<div class="store-container">
+    <div class="search-container">
+        <input [(ngModel)]="selectedProductId" type="number" placeholder="digite o id" />
+        <button (click)="loadProductById()">procurar</button>
+    </div>
+
+    <ul>
+        <li *ngFor="let product of products">
+            <img [src]="product.image" alt="{{ product.title }}" />
+            <h3>{{ product.title }}</h3>
+            <p class="price">price: ${{ product.price }}</p>
+            <button (click)="deleteProduct(product.id)">delete</button>
+        </li>
+    </ul>
+</div>
